@@ -1,0 +1,30 @@
+##### 1. 本地仓库初始化
+`git init` 
+```bash
+[john@jm git_jichu]$ git init
+hint: Using 'master' as the name for the initial branch. This default branch name
+hint: is subject to change. To configure the initial branch name to use in all
+hint: of your new repositories, which will suppress this warning, call:
+hint:
+hint: 	git config --global init.defaultBranch <name>
+hint:
+hint: Names commonly chosen instead of 'master' are 'main', 'trunk' and
+hint: 'development'. The just-created branch can be renamed via this command:
+hint:
+hint: 	git branch -m <name>
+hint:
+hint: Disable this message with "git config set advice.defaultBranchName false"
+Initialized empty Git repository in /home/john/Documents/geren_xuexi/git_xuexi/git_jichu/.git/
+```
+##### 2. 查看当前本地git仓库状态
+`git status`
+```bash
+[john@jm git_jichu]$ git status
+On branch master
+
+No commits yet
+
+nothing to commit (create/copy files and use "git add" to track)
+[john@jm git_jichu]$ 
+```
+
