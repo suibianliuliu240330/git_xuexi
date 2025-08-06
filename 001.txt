@@ -27,4 +27,106 @@ No commits yet
 nothing to commit (create/copy files and use "git add" to track)
 [john@jm git_jichu]$ 
 ```
+##### 3. 将更改后的文件追踪并提交
+`git add 文件名`
+将被追踪的文件添加到暂存区。
+```bash
+[john@jm git_jichu]$ git add 001.txt
+[john@jm git_jichu]$ git status
+On branch master
 
+No commits yet
+
+Changes to be committed:
+  (use "git rm --cached <file>..." to unstage)
+	new file:   001.txt
+```
+
+`git -m "确认提交"`
+将文件提交到仓库中
+```bash
+[john@jm git_jichu]$ git commit  -m "确认提交"
+Author identity unknown
+
+*** Please tell me who you are.
+
+Run
+
+  git config --global user.email "you@example.com"
+  git config --global user.name "Your Name"
+
+to set your account's default identity.
+Omit --global to set the identity only in this repository.
+
+fatal: empty ident name (for <john@jm.local>) not allowed
+[john@jm git_jichu]$ 
+
+[john@jm git_jichu]$ git config --global user.email "suibianliuliu240330@outlook.com"
+[john@jm git_jichu]$ git config --global user.name "suibianliuliu240330"
+[john@jm git_jichu]$ git commit  -m "确认提交"
+[master (root-commit) 4691a71] 确认提交
+ 1 file changed, 30 insertions(+)
+ create mode 100644 001.txt
+[john@jm git_jichu]$ git status
+On branch master
+nothing to commit, working tree clean
+```
+
+##### 4. gti log
+查看提交日志
+```bash
+[john@jm git_jichu]$ git log
+commit 4691a715c1b545fa33343f3e0098f6cf0ebef4a3 (HEAD -> master)
+Author: suibianliuliu240330 <suibianliuliu240330@outlook.com>
+Date:   Wed Aug 6 12:11:39 2025 +0800
+
+    确认提交
+[john@jm git_jichu]$ 
+```
+##### 5. 分支的创建与切换
+`git branch`
+查看分支，目前只有一个分支'master'
+`git branch fenzhiB`
+创建分支B
+`git checkout fenzhiB`
+切换到分之B上
+
+也可以在创建分支的同时直接切换到分支上
+`git checkout -b fenzhiB`
+
+```bash
+[john@jm git_jichu]$ git branch
+* master
+[john@jm git_jichu]$ git branch fenzhiB
+[john@jm git_jichu]$ git branch
+  fenzhiB
+* master
+[john@jm git_jichu]$ git checkout fenzhib
+error: pathspec 'fenzhib' did not match any file(s) known to git
+[john@jm git_jichu]$ git checkout fenzhiB
+Switched to branch 'fenzhiB'
+[john@jm git_jichu]$ git branch
+* fenzhiB
+  master
+[john@jm git_jichu]$ 
+```
+##### 5. 合并
+切换到master分支，然后输入git merge fenzhiB命令，将fenzhiB分支合并到master分支.
+```bash
+[john@jm git_jichu]$ git branch
+* fenzhiB
+  master
+[john@jm git_jichu]$ git checkout master
+Switched to branch 'master'
+[john@jm git_jichu]$ git branch
+  fenzhiB
+* master
+[john@jm git_jichu]$ git merge fenzhiB
+Already up to date.
+[john@jm git_jichu]$ git branch
+  fenzhiB
+* master
+```
+#### 6. 分支的删除
+`git branch -d fenzhiB`
+如果没有合并前会不不让删除，需要使用-D,强制删除。
