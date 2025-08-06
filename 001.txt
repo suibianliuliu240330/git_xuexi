@@ -72,6 +72,28 @@ On branch master
 nothing to commit, working tree clean
 ```
 
+也可以直接添加并提交
+`git commit -a -m "直接追踪并提交" __前提是文件已被追踪__
+```bash
+<Right>[john@jm git_jichu]$ git status
+On branch master
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git restore <file>..." to discard changes in working directory)
+	modified:   001.txt
+
+no changes added to commit (use "git add" and/or "git commit -a")
+[john@jm git_jichu]$ git commit -a -m "001更改后，从master上提交"
+[master 1b4c74d] 001更改后，从master上提交
+ 1 file changed, 102 insertions(+)
+
+[john@jm git_jichu]$ git status
+On branch master
+nothing to commit, working tree clean
+```
+
+
+
 ##### 4. gti log
 查看提交日志
 ```bash
@@ -130,3 +152,5 @@ Already up to date.
 #### 6. 分支的删除
 `git branch -d fenzhiB`
 如果没有合并前会不不让删除，需要使用-D,强制删除。
+
+####
